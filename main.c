@@ -16,10 +16,10 @@ VOID ErrorExit(LPSTR lpszMessage);
 VOID GetCurrentDir(VOID);
 VOID InitWelcomeMessage(VOID);
 VOID CustomArrayInit(Array_t* a, size_t sizeInit);
-VOID CustomArrayAddElement(Array_t* a, long element);
+VOID CustomArrayAddElement(Array_t* a, long element, int isSpecifiedIndex);
 VOID CustomArrayFreeElement(Array_t* a);
 VOID safeFree(char* pointerToFree);
-VOID CustomArrayDeleteLastElement(Array_t* a, size_t indexCount);
+VOID CustomArrayDeleteElement(Array_t* a, size_t indexCount);
 
 int main(VOID) {
     DWORD cNumRead, fdwMode, i;
@@ -70,10 +70,10 @@ int main(VOID) {
                 }
                 // HAS TO BE FIXED, WHEN USER BACKSPACE THE WHOLE LINE IS NOT OVVERIDE WITH THE NEW STRING -1 CHAR
                 if (irInBuf[i].Event.KeyEvent.wVirtualKeyCode == 0x08) {
-                    CustomArrayDeleteLastElement(&arrayElement, arrayElement.used);
+                    CustomArrayDeleteElement(&arrayElement, arrayElement.used);
                 }
                 else {
-                    CustomArrayAddElement(&arrayElement, irInBuf[i].Event.KeyEvent.uChar.AsciiChar);
+                    CustomArrayAddElement(&arrayElement, irInBuf[i].Event.KeyEvent.uChar.AsciiChar, 0);
                     printf("%c", arrayElement.array[indexArrayElement++]);
                 }
            }
@@ -83,7 +83,6 @@ int main(VOID) {
 
     return 0;
 }
-
 
 
 VOID ErrorExit(LPSTR lpszMessage)
@@ -113,17 +112,38 @@ VOID CustomArrayInit(Array_t*a, size_t sizeInit) {
     a->size = sizeInit;
 }
 
-VOID CustomArrayAddElement(Array_t* a, long element) {
+VOID CustomArrayAddElement(Array_t* a, long element, int isSpecifiedIndex) {
     if (a->used == a->size) {
         a->size <<= 1;
         a->array = realloc(a->array, a->size * sizeof(long));
     }
-    a->array[a->used] = element;
-    a->used++;
+    if (isSpecifiedIndex == 1) {
+        a->array[a->used] = a->array[a->used + 1];
+    }
+    else {
+        a->array[a->used] = element;
+        a->used++;
+    }
 }
 
-VOID CustomArrayDeleteLastElement(Array_t* a, size_t indexActualSize) {
-
+VOID CustomArrayDeleteElement(Array_t* a, size_t indexDeleted) {
+    Array_t newArray;
+    newArray.array = NULL;
+    CustomArrayInit(&newArray, 5);
+    for (unsigned i = indexDeleted -1; i < a->used -1; ++i) {
+        a->array[i] = a->array[i + 1];
+    }
+    for (unsigned k = 0; k < a->used - 1; ++k) {
+        if (indexDeleted == 0)
+            break;
+        CustomArrayAddElement(&newArray, a->array[k], 0);
+    }
+    CustomArrayFreeElement(a);
+    CustomArrayInit(a, 5);
+    for (unsigned j = 0; j < newArray.used; ++j) {
+        CustomArrayAddElement(a, newArray.array[j], 0);
+        printf("%c", a->array[j]);
+    }
 }
 
 VOID CustomArrayFreeElement(Array_t* a) {
