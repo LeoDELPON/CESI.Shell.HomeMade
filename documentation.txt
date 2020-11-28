@@ -1,0 +1,35 @@
+----------------------------------------------
+|          PERSONAL DOCUMENTATION            |
+|          SHELL MAKING V1                   |
+|          LEO DELPON                        |
+----------------------------------------------
+
+
+----------------------------------------------
+       DOCUMENTATION VOCABULARY PART
+----------------------------------------------
+-> size_t : 
+C'est de type unsigned int d'au minimum  16 bits. Ce type est généralement utilisé pour représenter la taille d'un objet.
+Entre autre, il va définir une taille ou un nombre d'octets. 
+-> HANDLE : 
+C'est un type
+-> BIT SHIFTING :
+
+-> DWORD : 
+
+-> WORD :
+
+-> GetStdHandle(DWORD) : 
+
+-> ReadConsoleInput(HANDLE, PINPUT_RECORD, DWORD, LDPWORD) :
+
+-> INPUT_RECORD :
+
+-> SetConsoleMode(HANDLE, DWORD) :
+
+----------------------------------------------
+      DOCUMENTATION EXPLICATION DU CODE
+----------------------------------------------
+-> Conception d'un tableau dynamique:
+J'ai crée trois fonctions [InitCustomArray, AddElementCA, FreeElementCA] dans ma version 1, On commence donc par initier une
+taille de base au tableau puis on check continuellement si il 
