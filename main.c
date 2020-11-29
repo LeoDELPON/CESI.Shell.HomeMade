@@ -20,6 +20,7 @@ VOID CustomArrayAddElement(Array_t* a, long element, int isSpecifiedIndex);
 VOID CustomArrayFreeElement(Array_t* a);
 VOID safeFree(char* pointerToFree);
 VOID CustomArrayDeleteElement(Array_t* a, size_t indexCount);
+VOID CustomArrayAddEOF(Array_t* a);
 
 int main(VOID) {
     DWORD cNumRead, fdwMode, i;
@@ -62,6 +63,7 @@ int main(VOID) {
         {
             if (irInBuf[i].Event.KeyEvent.bKeyDown) {
                 if (irInBuf[i].Event.KeyEvent.wVirtualKeyCode == 0x0D) {
+                    CustomArrayAddEOF(&arrayElement);
                     CustomArrayFreeElement(&arrayElement);
                     CustomArrayInit(&arrayElement, 5);
                     printf("\n");
@@ -70,7 +72,7 @@ int main(VOID) {
                 }
                 // HAS TO BE FIXED, WHEN USER BACKSPACE THE WHOLE LINE IS NOT OVVERIDE WITH THE NEW STRING -1 CHAR
                 if (irInBuf[i].Event.KeyEvent.wVirtualKeyCode == 0x08) {
-                    CustomArrayDeleteElement(&arrayElement, arrayElement.used);
+                    CustomArrayDeleteElement(&arrayElement, arrayElement.used);             
                 }
                 else {
                     CustomArrayAddElement(&arrayElement, irInBuf[i].Event.KeyEvent.uChar.AsciiChar, 0);
@@ -87,7 +89,7 @@ int main(VOID) {
 
 VOID ErrorExit(LPSTR lpszMessage)
 {
-    fprintf(stderr, "ERROR: %s,\n ErrorNo: %d", lpszMessage, errno);
+    fprintf(stderr, "ERROR: %s,\n ErrorNo: %d at line : %d  in the file %s", lpszMessage, errno, __LINE__, __FILE__);
     SetConsoleMode(hStdin, fdwSaveOldMode);
     ExitProcess(0);
 }
@@ -113,6 +115,8 @@ VOID CustomArrayInit(Array_t*a, size_t sizeInit) {
 }
 
 VOID CustomArrayAddElement(Array_t* a, long element, int isSpecifiedIndex) {
+    if (!a)
+        ErrorExit("CustomArrayAddEelement, the Array_t does not exist");
     if (a->used == a->size) {
         a->size <<= 1;
         a->array = realloc(a->array, a->size * sizeof(long));
@@ -126,20 +130,43 @@ VOID CustomArrayAddElement(Array_t* a, long element, int isSpecifiedIndex) {
     }
 }
 
-VOID CustomArrayDeleteElement(Array_t* a, size_t indexDeleted) {
+VOID CustomArrayAddEOF(Array_t* a) {
+    if (!a)
+        ErrorExit("CustomArrayAddEelement, the Array_t does not exist");
+    if (a->used == a->size) {
+        a->size <<= 1;
+        a->array = realloc(a->array, a->size * sizeof(long));
+    }
+    a->array[a->used] = "\0";
+    a->used++;
+}
+
+VOID CustomArrayDeleteElement(Array_t* a, size_t elementToDel) {
     Array_t newArray;
     newArray.array = NULL;
+    int index = elementToDel - 1;
+    int lastIndex = (a->used - 1);
     CustomArrayInit(&newArray, 5);
-    for (unsigned i = indexDeleted -1; i < a->used -1; ++i) {
-        a->array[i] = a->array[i + 1];
+    if (index != lastIndex) {
+        for (unsigned i = index; i < lastIndex; ++i) {
+            a->array[i] = a->array[i + 1];
+            printf("%c\n", a->array[i]);
+        }
     }
+
     for (unsigned k = 0; k < a->used - 1; ++k) {
-        if (indexDeleted == 0)
+        if (elementToDel == 0) {
+            CustomArrayFreeElement(&newArray);
+            CustomArrayInit(&newArray, 5);
             break;
+        }
         CustomArrayAddElement(&newArray, a->array[k], 0);
     }
+
     CustomArrayFreeElement(a);
     CustomArrayInit(a, 5);
+    printf("\33[2K\r");
+    GetCurrentDir();
     for (unsigned j = 0; j < newArray.used; ++j) {
         CustomArrayAddElement(a, newArray.array[j], 0);
         printf("%c", a->array[j]);

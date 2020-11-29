@@ -1,3 +1,6 @@
 ﻿  main.c
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(152,22): warning C4133: 'fonction' : types incompatibles - de 'long *' à 'char *'
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(68,51): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(144,29): warning C4047: '=' : les niveaux d'indirection de 'long' et de 'char [2]' sont différents
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(155,36): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(183,22): warning C4133: 'fonction' : types incompatibles - de 'long *' à 'char *'
   Shell.vcxproj -> C:\Users\delpo\Documents\Projets\C#\Shell\Debug\Shell.exe
