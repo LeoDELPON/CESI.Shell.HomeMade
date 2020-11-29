@@ -19,7 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="commandShell.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="parser.c" />
+    <ClCompile Include="stringManager.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="commandShell.h" />
+    <ClInclude Include="fwd.h" />
+    <ClInclude Include="parser.h" />
+    <ClInclude Include="stringManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

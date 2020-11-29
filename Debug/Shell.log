@@ -1,6 +1,28 @@
-﻿  main.c
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(68,51): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(144,29): warning C4047: '=' : les niveaux d'indirection de 'long' et de 'char [2]' sont différents
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(155,36): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(183,22): warning C4133: 'fonction' : types incompatibles - de 'long *' à 'char *'
-  Shell.vcxproj -> C:\Users\delpo\Documents\Projets\C#\Shell\Debug\Shell.exe
+﻿  commandShell.c
+  main.c
+  parser.c
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(6,2): error C2061: erreur de syntaxe : identificateur 'Dict_t'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(10,1): error C2059: erreur de syntaxe : '}'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(22,36): error C2143: erreur de syntaxe : absence de ')' avant '*'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(22,36): error C2143: erreur de syntaxe : absence de '{' avant '*'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(22,42): error C2059: erreur de syntaxe : ')'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(22,44): error C2054: '(' attendu après 'dict'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(26,32): error C2143: erreur de syntaxe : absence de ')' avant '*'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(26,32): error C2143: erreur de syntaxe : absence de '{' avant '*'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(26,38): error C2059: erreur de syntaxe : ')'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(26,40): error C2054: '(' attendu après 'dict'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(30,29): error C2143: erreur de syntaxe : absence de ')' avant '*'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(30,29): error C2143: erreur de syntaxe : absence de '{' avant '*'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(30,35): error C2059: erreur de syntaxe : ')'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(30,37): error C2054: '(' attendu après 'dict'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(34,28): error C2143: erreur de syntaxe : absence de ')' avant '*'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(34,28): error C2143: erreur de syntaxe : absence de '{' avant '*'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(34,34): error C2059: erreur de syntaxe : ')'
+C:\Users\delpo\Documents\Projets\C#\Shell\parser.c(34,36): error C2054: '(' attendu après 'dict'
+  stringManager.c
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(18,18): warning C4013: 'ErrorExit' non défini(e) ; extern retournant int pris par défaut
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(39,29): warning C4047: '=' : les niveaux d'indirection de 'long' et de 'char [2]' sont différents
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(50,36): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(68,18): warning C4013: 'GetCurrentDir' non défini(e) ; extern retournant int pris par défaut
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(78,22): warning C4133: 'fonction' : types incompatibles - de 'long *' à 'char *'
+  Génération de code en cours...
