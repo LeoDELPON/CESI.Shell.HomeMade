@@ -1,5 +1,6 @@
 #include "fwd.h"
 #include "stringManager.h"
+#include "commandShell.h"
 
 
 
@@ -75,12 +76,12 @@ VOID CustomArrayDeleteElement(Array_t* a, size_t elementToDel) {
 VOID CustomArrayFreeElement(Array_t* a) {
     if (!a->array)
         ErrorExit("Array memory not allocated");
-    safeFree(a->array);
+    SafeFree(a->array);
     a->used = a->size = 0;
 }
 
 
-VOID safeFree(char* pointerToFree) {
+VOID SafeFree(char* pointerToFree) {
     if (!pointerToFree)
         ErrorExit("An error occured");
     free(pointerToFree);

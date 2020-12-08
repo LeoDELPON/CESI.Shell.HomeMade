@@ -4,3 +4,4 @@
 
 VOID GetCurrentDir(VOID);
 VOID ErrorExit(LPSTR lpszMessage);
+VOID ChangeDir(char* path);
