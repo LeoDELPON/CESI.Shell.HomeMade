@@ -42,14 +42,14 @@ VOID ChangeDir(const char* path) {
 
 //Not finished bc it does not find dir
 int ListDirectoryContent(const char* sDir) {
-    WIN32_FIND_DATA fdFile;
+    WIN32_FIND_DATAA fdFile;
     HANDLE hFind = NULL;
 
-    char sPath[2048];
+    wchar_t sPath[2048];
 
     sprintf_s(sPath, 2048, "%s\\*.*", sDir);
 
-    if ((hFind = FindFirstFile((LPCWSTR)sPath, &fdFile)) == INVALID_HANDLE_VALUE)
+    if ((hFind = FindFirstFileA(sPath, &fdFile)) == INVALID_HANDLE_VALUE)
     {
         printf("Path not found: [%s]\n", sDir);
         return 0;
@@ -70,7 +70,7 @@ int ListDirectoryContent(const char* sDir) {
                 printf_s("File: %s\n", sPath);
             }
         }
-    } while (FindNextFile(hFind, &fdFile));
+    } while (FindNextFileA(hFind, &fdFile));
     FindClose(hFind);
     return 1;
 }
