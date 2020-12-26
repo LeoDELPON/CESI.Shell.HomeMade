@@ -2,22 +2,7 @@
 #include "processManager.h"
 #include "commandShell.h"
 
-char* StrGetter(Array_t* buffer) {
-	size_t length = buffer->used;
-	char* charBuffer = NULL;
-
-	charBuffer = (char*)malloc(sizeof(char) * length);
-
-	for (unsigned i = 0; i < length; ++i) {
-		charBuffer[i] = buffer->array[i];
-	}
-
-	return charBuffer;
-}
-
-
 DWORD ApplyCommand(Array_t* stringToBeParsed) {
-	char* command = StrGetter(stringToBeParsed);
 	CallProcessList_t listProcess;
 	InitCommands(&listProcess);
 
@@ -86,14 +71,14 @@ void FreeCallProcess(CallProcess_t* process) {
 
 }
 
-//
-//VOID InitExitProgram(CallProcess_t* dict) {
-//
-//}
-//
-//
-//VOID InitCreateDirectory(CallProcess_t* dict) {
-//
-//}
+
+void InitExitProgram(CallProcess_t* process) {
+
+}
+
+
+void InitCreateDirectory(CallProcess_t* process) {
+
+}
 
 

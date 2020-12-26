@@ -26,3 +26,8 @@ typedef struct {
 	size_t used;
 	size_t size;
 } CallProcessList_t;
+
+typedef struct {
+	char* structureElement;
+	SyntaxTree* nextElement;
+} SyntaxTree;
