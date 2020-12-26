@@ -13,3 +13,16 @@ typedef  struct {
     size_t used;
     size_t size;
 } Array_t;
+
+typedef struct {
+	char* keyDict;
+	void* (*func)(void);
+	size_t IDAssociated;
+	int dictSize;
+} CallProcess_t;
+
+typedef struct {
+	CallProcess_t* process;
+	size_t used;
+	size_t size;
+} CallProcessList_t;

@@ -1,8 +1,6 @@
 #include "fwd.h"
 #include "stringManager.h"
 
-
-
 VOID ErrorExit(LPSTR lpszMessage);
 VOID GetCurrentDir(VOID);
 VOID InitWelcomeMessage(VOID);
@@ -44,7 +42,6 @@ int main(VOID) {
             GetCurrentDir();
             isNewCommand = 0;
         }
-        // Boucle for qui fait une seule itération
         for (i = 0; i < cNumRead; i++)
         {
             if (irInBuf[i].Event.KeyEvent.bKeyDown) {
@@ -68,6 +65,5 @@ int main(VOID) {
         }
     }
     SetConsoleMode(hStdin, fdwSaveOldMode);
-
     return 0;
 }

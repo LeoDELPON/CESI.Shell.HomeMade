@@ -51,10 +51,9 @@ int ListDirectoryContent(const char* sDir) {
 
     if ((hFind = FindFirstFileA(sPath, &fdFile)) == INVALID_HANDLE_VALUE)
     {
-        printf("Path not found: [%s]\n", sDir);
+        printf_s("Path not found: [%s]\n", sDir);
         return 0;
     }
-
     do
     {
         if (strcmp((char*)fdFile.cFileName, ".") != 0
