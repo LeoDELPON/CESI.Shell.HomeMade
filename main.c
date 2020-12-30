@@ -14,8 +14,7 @@ int main(void) {
     char chBuffer[1];
     int counter = 0;
     Array_t arrayElement;
-    size_t indexArrayElement = 0;
-    LD_BOOL_T isRunning = TRUE;
+    LD_BOOL_T isRunning = TRUE, isLeftArrow;
     LimitPosBaseInput_t limitStart, limitEnd;
 
 
@@ -32,6 +31,7 @@ int main(void) {
     InitWelcomeMessage();
     GetCurrentDir();
     GetCursorPosition(&limitStart);
+    limitStart.index = 0;
     while (isRunning)
     {
         if (!ReadConsoleInputW(
@@ -43,29 +43,27 @@ int main(void) {
 
         if (isNewCommand == 1) {
             GetCurrentDir();
+            GetCursorPosition(&limitStart);
             isNewCommand = 0;
         }
         for (i = 0; i < cNumRead; i++)
         {
             if (irInBuf[i].Event.KeyEvent.bKeyDown) {
                 if (irInBuf[i].Event.KeyEvent.wVirtualKeyCode == KEY_ENTER) {
-                    EnterWriteToConsole(&arrayElement);
-                    GetCursorPosition(&limitStart);
+                    EnterWriteToConsole(&arrayElement, &limitStart);
                     isNewCommand = 1;
-                    indexArrayElement = 0;
+                    limitStart.index = 0;
                 }
                 MoveConsole(&irInBuf, &limitStart, &limitEnd);
                 if (irInBuf[i].Event.KeyEvent.wVirtualKeyCode == KEY_DEL) {
                     limitEnd.x--;
                     CustomArrayDeleteElement(&arrayElement, arrayElement.used);
-                    indexArrayElement--;
+                    limitStart.index--;
                 }
-                else {
+                if (irInBuf[i].Event.KeyEvent.uChar.AsciiChar) {
+                    GetCursorPosition(&limitEnd);
                     CustomArrayAddElement(&arrayElement, irInBuf[i].Event.KeyEvent.uChar.AsciiChar, 0);
-                    if (irInBuf[i].Event.KeyEvent.uChar.AsciiChar) {
-                        GetCursorPosition(&limitEnd);
-                    }
-                    printf("%c", arrayElement.array[indexArrayElement++]);
+                    printf("%c", arrayElement.array[limitStart.index++]);
                 }
             }
         }

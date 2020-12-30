@@ -43,6 +43,7 @@ struct SyntaxTree {
 typedef struct _LimitPosBaseInput_t {
 	long x;
 	long y;
+	int index;
 } LimitPosBaseInput_t;
 
 HANDLE hStdin, hStdout;
