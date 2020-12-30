@@ -20,15 +20,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="commandShell.c" />
+    <ClCompile Include="cursorMotion.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="parser.c" />
+    <ClCompile Include="processManager.c" />
     <ClCompile Include="stringManager.c" />
+    <ClCompile Include="stringParser.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="commandShell.h" />
+    <ClInclude Include="cursorMotion.h" />
     <ClInclude Include="fwd.h" />
-    <ClInclude Include="parser.h" />
+    <ClInclude Include="processManager.h" />
     <ClInclude Include="stringManager.h" />
+    <ClInclude Include="stringParser.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -1,10 +1,13 @@
 #include "fwd.h"
 #include "processManager.h"
 #include "commandShell.h"
+#include "stringParser.h"
 
-DWORD ApplyCommand(Array_t* stringToBeParsed) {
+void ApplyCommand(Array_t* stringToBeParsed) {
 	CallProcessList_t listProcess;
-	InitCommands(&listProcess);
+	//InitCommands(&listProcess);
+	SyntaxTree tree;
+	StrParser(stringToBeParsed ,&tree);
 
 	//for (unsigned i = 0; i < listProcess.dictSize ; ++i) {
 	//	if (strcmp(listProcess.keyDict, stringToBeParsed->array))

@@ -1,0 +1,2 @@
+C:\Users\delpo\Documents\Projets\C#\Shell\x64\Debug\Shell.exe
+C:\Users\delpo\Documents\Projets\C#\Shell\x64\Debug\Shell.pdb

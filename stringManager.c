@@ -38,7 +38,6 @@ VOID CustomArrayAddEOF(Array_t* a) {
         a->array = realloc(a->array, a->size * sizeof(long));
     }
     a->array[a->used] = "\0";
-    a->used++;
 }
 
 VOID CustomArrayDeleteElement(Array_t* a, size_t elementToDel) {
@@ -86,3 +85,4 @@ VOID SafeFree(char* pointerToFree) {
         ErrorExit("An error occured");
     free(pointerToFree);
 }
+

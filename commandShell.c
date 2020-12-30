@@ -10,7 +10,7 @@ VOID ErrorExit(LPSTR lpszMessage)
     ExitProcess(0);
 }
 
-VOID GetCurrentDir(VOID) {
+void GetCurrentDir(void) {
     char* currentDir;
     if ((currentDir = _getcwd(NULL, 0)) == NULL)
         ErrorExit("[-] _getcwd");
