@@ -14,7 +14,7 @@ void MoveConsole(INPUT_RECORD* pIrInBuf, LimitPosBaseInput_t* lim, LimitPosBaseI
 		if (pIrInBuf[0].Event.KeyEvent.wVirtualKeyCode == KEY_LEFT_ARROW && (lim->x < psbi.dwCursorPosition.X)) {
 			SetCursorPosition(psbi.dwCursorPosition.X - 1, psbi.dwCursorPosition.Y);
 		}
-		if (pIrInBuf[0].Event.KeyEvent.wVirtualKeyCode == KEY_RIGHT_ARROW && (limEnd->x < psbi.dwCursorPosition.X)) {
+		if (pIrInBuf[0].Event.KeyEvent.wVirtualKeyCode == KEY_RIGHT_ARROW && (psbi.dwCursorPosition.X < limEnd->x)) {
 			SetCursorPosition(psbi.dwCursorPosition.X + 1, psbi.dwCursorPosition.Y);
 		}
 	}

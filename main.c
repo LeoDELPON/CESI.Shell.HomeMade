@@ -56,12 +56,15 @@ int main(void) {
                 }
                 MoveConsole(&irInBuf, &limitStart, &limitEnd);
                 if (irInBuf[i].Event.KeyEvent.wVirtualKeyCode == KEY_DEL) {
+                    limitEnd.x--;
                     CustomArrayDeleteElement(&arrayElement, arrayElement.used);
                     indexArrayElement--;
                 }
                 else {
                     CustomArrayAddElement(&arrayElement, irInBuf[i].Event.KeyEvent.uChar.AsciiChar, 0);
-                    //GetCursorPosition(&limitEnd);
+                    if (irInBuf[i].Event.KeyEvent.uChar.AsciiChar) {
+                        GetCursorPosition(&limitEnd);
+                    }
                     printf("%c", arrayElement.array[indexArrayElement++]);
                 }
             }
