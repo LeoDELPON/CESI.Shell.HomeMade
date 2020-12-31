@@ -53,7 +53,7 @@ VOID CustomArrayDeleteElement(Array_t* a, size_t elementToDel) {
         }
     }
 
-    for (unsigned k = 0; k < a->used - 1; ++k) {
+    for (unsigned k = 0; k < lastIndex; ++k) {
         if (elementToDel == 0) {
             CustomArrayFreeElement(&newArray);
             CustomArrayInit(&newArray, 5);

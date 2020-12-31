@@ -10,7 +10,7 @@ VOID InitWelcomeMessage(VOID);
 int main(void) {
     DWORD cNumRead, fdwMode, i;
     INPUT_RECORD irInBuf[128];
-    int isNewCommand = 0;
+    LD_BOOL_T isNewCommand = FALSE;
     char chBuffer[1];
     int counter = 0;
     Array_t arrayElement;
@@ -41,26 +41,26 @@ int main(void) {
             &cNumRead))
             ErrorExit("ReadConsoleInput");
 
-        if (isNewCommand == 1) {
+        if (isNewCommand) {
             GetCurrentDir();
             GetCursorPosition(&limitStart);
-            isNewCommand = 0;
+            isNewCommand = FALSE;
         }
         for (i = 0; i < cNumRead; i++)
         {
             if (irInBuf[i].Event.KeyEvent.bKeyDown) {
                 if (irInBuf[i].Event.KeyEvent.wVirtualKeyCode == KEY_ENTER) {
                     EnterWriteToConsole(&arrayElement, &limitStart);
-                    isNewCommand = 1;
+                    isNewCommand = TRUE;
                     limitStart.index = 0;
                 }
                 MoveConsole(&irInBuf, &limitStart, &limitEnd);
-                if (irInBuf[i].Event.KeyEvent.wVirtualKeyCode == KEY_DEL) {
+                if (irInBuf[i].Event.KeyEvent.wVirtualKeyCode == KEY_DEL && (arrayElement.used != 0)) {
                     limitEnd.x--;
                     CustomArrayDeleteElement(&arrayElement, arrayElement.used);
                     limitStart.index--;
                 }
-                if (irInBuf[i].Event.KeyEvent.uChar.AsciiChar) {
+                else if (irInBuf[i].Event.KeyEvent.uChar.AsciiChar) {
                     GetCursorPosition(&limitEnd);
                     CustomArrayAddElement(&arrayElement, irInBuf[i].Event.KeyEvent.uChar.AsciiChar, 0);
                     printf("%c", arrayElement.array[limitStart.index++]);
