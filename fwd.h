@@ -14,7 +14,6 @@
 #define KEY_RIGHT_ARROW 0x27
 
 typedef unsigned LD_BOOL_T;
-typedef struct SyntaxTree SyntaxTree;
 
 typedef  struct _Array_t {
     char* array;
@@ -35,10 +34,10 @@ typedef struct _CallProcessList_t {
 	size_t size;
 } CallProcessList_t;
 
-struct SyntaxTree {
+typedef struct _List_Parsed_t {
 	char* structureElement;
-	SyntaxTree* nextElement;
-};
+	struct _List_Parsed_t* nextElement;
+} LIST_PARSED_T;
 
 typedef struct _LimitPosBaseInput_t {
 	long x;

@@ -8,3 +8,4 @@ VOID CustomArrayFreeElement(Array_t* a);
 VOID SafeFree(char* pointerToFree);
 VOID CustomArrayDeleteElement(Array_t* a, size_t indexCount);
 VOID CustomArrayAddEOF(Array_t* a);
+char* LdnStrncpy_s(char* dest, int desIndex, char* source, int count);

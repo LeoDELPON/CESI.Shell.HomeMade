@@ -1,53 +1,58 @@
 #include "fwd.h"
 #include "stringManager.h"
 
-char* StrGetter(Array_t* buffer) {
-	int length = buffer->used;
-	char* charBuffer = NULL;
-	char* tmpCharBuffer = NULL;
-	if(!charBuffer)
-		charBuffer = (char*)malloc(sizeof(char) * length + 1);
-	strncpy_s(charBuffer, length + 1, buffer->array, length);
-	printf("%s\n", charBuffer);
-	return charBuffer;
+LIST_PARSED_T* AddToList(LIST_PARSED_T* list, char* e) {
+    int length = strlen(e);
+    int newL = length + 1;
+    if (!list) {
+        list = malloc(sizeof(LIST_PARSED_T));
+        if (list) {
+            list->structureElement = NULL;
+            list->structureElement = malloc(sizeof(char) * newL);
+            strncpy_s(list->structureElement, newL, e, length);
+            list->nextElement = NULL;
+            return list;
+        }
+    }
+    else {
+        LIST_PARSED_T* current = list;
+        LIST_PARSED_T* newNode = malloc(sizeof(LIST_PARSED_T));
+        if (newNode) {
+            newNode->structureElement = NULL;
+            newNode->structureElement = malloc(sizeof(char) * newL);
+            strncpy_s(newNode->structureElement, newL, e, length);
+            newNode->nextElement = NULL;
+        }
+
+        while (current->nextElement != NULL) {
+            current = current->nextElement;
+        }
+        current->nextElement = newNode;
+        return 1;
+    }
+
 }
 
-void InitSyntaxTree(SyntaxTree* st, char* first) {
-	st->structureElement = NULL;
-	if (!st->structureElement)
-		st->structureElement = (SyntaxTree*)malloc(sizeof(first));
-	st->structureElement = first;
-	st->nextElement = NULL;
-}
 
-SyntaxTree AddToSyntaxTree(SyntaxTree* st, char* element) {
-	SyntaxTree newTree;
-	newTree.structureElement = NULL;
-	if (!newTree.structureElement)
-		newTree.structureElement = (SyntaxTree*)malloc(sizeof(element));
-	newTree.structureElement = element;
-	newTree.nextElement = st;
-	return newTree;
-}
+char* OperatorParser(char* str, LIST_PARSED_T* list) {
+    const char TOKEN_CHAR_TRIGGER = ' ';
+    char* chParsed;
+    unsigned strLength = strlen(str);
+    chParsed = NULL;
+    char* ret;
+    for (unsigned i = 0; i < strLength; ++i) {
+        if ((TOKEN_CHAR_TRIGGER != str[i] && (str[0] != '\0')) || (str[i] == '\0')) continue;
 
+        chParsed = malloc(sizeof(char) * i + 1);
+        LdnStrncpy_s(chParsed, i + 1, str, 0);
+        printf("%s\n", chParsed);
+        AddToList(list, chParsed);
+        free(chParsed);
+        chParsed = NULL;
 
-void StrParser(Array_t* buffer, SyntaxTree* tree) {
-	char* finalStr = NULL;
-	Array_t buf;
-	SyntaxTree newT;
-	CustomArrayInit(&buf, 5);
-	for (unsigned i = 0; i < buffer->used; ++i) {
-		if (buffer->array[i] != 32) {
-			CustomArrayAddElement(&buf, buffer->array[i], 0);
-		}
-		else {
-			finalStr = StrGetter(&buf); 
-			if (!tree) {
-				InitSyntaxTree(tree, finalStr);
-			}
-			else {
-				newT = AddToSyntaxTree(tree, finalStr);
-			}
-		}
-	}
+        ret = malloc(sizeof(char) * (strLength - i));
+        LdnStrncpy_s(ret, (strLength - i), str, i + 1);
+        return ret;
+    }
+    return "l";
 }

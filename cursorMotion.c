@@ -1,4 +1,5 @@
 #include "cursorMotion.h"
+#include "processManager.h"
 
 
 void SetCursorPosition(int x, int y) {

@@ -1,6 +1,4 @@
 #include "fwd.h";
 
-char* StrGetter(Array_t* buffer);
-void StrParser(Array_t* buffer, SyntaxTree* tree);
-void InitSyntaxTree(SyntaxTree* st, char* first);
-SyntaxTree AddToSyntaxTree(SyntaxTree* st, char* element);
+LIST_PARSED_T* AddToList(LIST_PARSED_T* list, char* e);
+char* OperatorParser(char* str, LIST_PARSED_T* list);

@@ -86,3 +86,15 @@ VOID SafeFree(char* pointerToFree) {
     free(pointerToFree);
 }
 
+char* LdnStrncpy_s(char* dest, int desIndex, char* source, int count) {
+    int index = 0;
+    int sourceLength = strlen(source);
+    while (desIndex != 0) {
+        dest[index] = source[count];
+        desIndex--;
+        count++;
+        index++;
+    }
+    dest[index - 1] = '\0';
+    return dest;
+}
