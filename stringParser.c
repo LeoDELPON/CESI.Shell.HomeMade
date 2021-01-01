@@ -41,7 +41,7 @@ char* OperatorParser(char* str, LIST_PARSED_T* list) {
     chParsed = NULL;
     char* ret;
     for (unsigned i = 0; i < strLength; ++i) {
-        if ((TOKEN_STRING_SEPARATOR != str[i] && (str[0] != '\0')) || (str[i] == '\0')) continue;
+        if ((TOKEN_STRING_SEPARATOR != str[i] && (str[0] != ' ')) || (str[i] == '\0')) continue;
 
         chParsed = malloc(sizeof(char) * i + 1);
         LdnStrncpy_s(chParsed, i + 1, str, 0);

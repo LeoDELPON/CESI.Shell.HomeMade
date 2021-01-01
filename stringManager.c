@@ -73,8 +73,6 @@ VOID CustomArrayDeleteElement(Array_t* a, size_t elementToDel) {
 }
 
 VOID CustomArrayFreeElement(Array_t* a) {
-    if (!a->array)
-        SAFE_ERROR_EXIT(a->array);
     SafeFree(a->array);
     a->used = a->size = 0;
 }

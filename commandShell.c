@@ -2,18 +2,11 @@
 #include "fwd.h"
 #include "commandShell.h"
 
-
-VOID ErrorExit(LPSTR lpszMessage)
-{
-    fprintf(stderr, "ERROR: %s,\n ErrorNo: %d at line : %d  in the file %s", lpszMessage, errno, __LINE__, __FILE__);
-    SetConsoleMode(hStdin, fdwSaveOldMode);
-    ExitProcess(0);
-}
-
 void GetCurrentDir(void) {
     char* currentDir;
-    if ((currentDir = _getcwd(NULL, 0)) == NULL)
-        ErrorExit("[-] _getcwd");
+    if ((currentDir = _getcwd(NULL, 0)) == NULL) {
+        SAFE_ERROR_EXIT(currentDir);
+    }
     else {
         printf("%s ", currentDir);
         free(currentDir);
@@ -24,16 +17,7 @@ VOID ChangeDir(const char* path) {
      if (!path)
          ErrorExit("[-] ChangeDir \n");
      if (_chdir(path)) {
-         switch (errno) {
-         case ENOENT:
-             ErrorExit("[-] Unable to locate the directory : %s\n", path);
-             break;
-         case EINVAL:
-             printf("[-] Invalid buffer.\n");
-             break;
-         default:
-             printf("[-] Error unkown. \n");
-         }
+         SAFE_ERROR_EXIT(path);
      }
      else {
          GetCurrentDir();
@@ -51,8 +35,7 @@ int ListDirectoryContent(const char* sDir) {
 
     if ((hFind = FindFirstFileA(sPath, &fdFile)) == INVALID_HANDLE_VALUE)
     {
-        printf_s("Path not found: [%s]\n", sDir);
-        return 0;
+        SAFE_ERROR_EXIT(hFind);
     }
     do
     {

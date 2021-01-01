@@ -9,8 +9,8 @@ void ApplyCommand(Array_t* stringToBeParsed) {
 	LIST_PARSED_T* listChParsed = NULL;
 	char* newRet;
 
-	newRet = (char*)malloc(sizeof(char) * (strlen(stringToBeParsed->array) + 1));
-	strncpy_s(newRet, strlen(stringToBeParsed->array) + 1, stringToBeParsed->array, strlen(stringToBeParsed->array));
+	newRet = (char*)malloc(sizeof(char) * (stringToBeParsed->used + 1));
+	strncpy_s(newRet, stringToBeParsed->used + 1, stringToBeParsed->array, stringToBeParsed->used);
 	do {
 		newRet = OperatorParser(newRet, listChParsed);
 	} while (1);

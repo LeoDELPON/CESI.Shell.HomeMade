@@ -14,6 +14,7 @@
 #define KEY_RIGHT_ARROW 0x27
 
 #define SAFE_FREE(x) if(x) {free(x); x=NULL;}
+
 #define SAFE_ERROR_EXIT_STRING_1_ARG(arg) {char buff[256];fprintf(stderr, "[-] ERROR on %s function\n[-] %s=%s \n[-] ErrorNo: %d at line : %d in the file %s\n[-] Message: %s",__func__ , #arg, arg ,errno, __LINE__, __FILE__, strerror_s(buff, 256, errno)); exit(EXIT_FAILURE);}
 #define SAFE_ERROR_EXIT_STRING_2_ARGS(arg1, arg2) {char buff[256]; fprintf(stderr, "[-] ERROR on %s function\n[-] %s=%s | %s=%s \n[-] ErrorNo: %d at line : %d in the file %s\n[-] Message: %s",__func__ , #arg1, arg1, #arg2, arg2, errno, __LINE__, __FILE__, strerror_s(buff, 256, errno)); exit(EXIT_FAILURE);}
 #define SAFE_ERROR_EXIT_STRING_3_ARGS(arg1, arg2, arg3) {char buff[256]; fprintf(stderr, "[-] ERROR on %s function\n[-] %s=%s | %s=%s | %s=%s \n[-] ErrorNo: %d at line : %d in the file %s\n[-] Message: %s",__func__ , #arg1, arg1, #arg2, arg2, #arg3, arg3 ,errno, __LINE__, __FILE__, strerror(buff, 256, errno)); exit(EXIT_FAILURE);}
@@ -21,6 +22,8 @@
 #define PRINT_STRING_MACRO_CHOOSER(...) GET_4TH_ARG(__VA_ARGS__, SAFE_ERROR_EXIT_STRING_3_ARGS, SAFE_ERROR_EXIT_STRING_2_ARGS ,SAFE_ERROR_EXIT_STRING_1_ARG)
 
 #define SAFE_ERROR_EXIT(...) PRINT_STRING_MACRO_CHOOSER(__VA_ARGS__)(__VA_ARGS__)
+
+#define SAFE_MALLOC(x,y,z) if(!((x)=malloc(y * z))) {SAFE_ERROR_EXIT(x);}
 
 typedef unsigned LD_BOOL_T;
 
