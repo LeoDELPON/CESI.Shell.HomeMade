@@ -35,13 +35,13 @@ LIST_PARSED_T* AddToList(LIST_PARSED_T* list, char* e) {
 
 
 char* OperatorParser(char* str, LIST_PARSED_T* list) {
-    const char TOKEN_CHAR_TRIGGER = ' ';
+    const char TOKEN_STRING_SEPARATOR = ' ';
     char* chParsed;
     unsigned strLength = strlen(str);
     chParsed = NULL;
     char* ret;
     for (unsigned i = 0; i < strLength; ++i) {
-        if ((TOKEN_CHAR_TRIGGER != str[i] && (str[0] != '\0')) || (str[i] == '\0')) continue;
+        if ((TOKEN_STRING_SEPARATOR != str[i] && (str[0] != '\0')) || (str[i] == '\0')) continue;
 
         chParsed = malloc(sizeof(char) * i + 1);
         LdnStrncpy_s(chParsed, i + 1, str, 0);

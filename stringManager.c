@@ -32,7 +32,7 @@ VOID CustomArrayAddElement(Array_t* a, long element, int isSpecifiedIndex) {
 
 VOID CustomArrayAddEOF(Array_t* a) {
     if (!a)
-        ErrorExit("CustomArrayAddEelement, the Array_t does not exist");
+        SAFE_ERROR_EXIT(a);
     if (a->used == a->size) {
         a->size <<= 1;
         a->array = realloc(a->array, a->size * sizeof(long));
@@ -74,7 +74,7 @@ VOID CustomArrayDeleteElement(Array_t* a, size_t elementToDel) {
 
 VOID CustomArrayFreeElement(Array_t* a) {
     if (!a->array)
-        ErrorExit("Array memory not allocated");
+        SAFE_ERROR_EXIT(a->array);
     SafeFree(a->array);
     a->used = a->size = 0;
 }
@@ -82,8 +82,8 @@ VOID CustomArrayFreeElement(Array_t* a) {
 
 VOID SafeFree(char* pointerToFree) {
     if (!pointerToFree)
-        ErrorExit("An error occured");
-    free(pointerToFree);
+        SAFE_ERROR_EXIT(pointerToFree);
+    SAFE_FREE(pointerToFree);
 }
 
 char* LdnStrncpy_s(char* dest, int desIndex, char* source, int count) {

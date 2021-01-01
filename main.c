@@ -26,7 +26,7 @@ int main(void) {
 
     if (hStdin == INVALID_HANDLE_VALUE
         || hStdout == INVALID_HANDLE_VALUE)
-        ErrorExit("GetStdHandle");
+        SAFE_ERROR_EXIT(hStdin, hStdout);
 
     InitWelcomeMessage();
     GetCurrentDir();
@@ -39,7 +39,7 @@ int main(void) {
             irInBuf,
             128,
             &cNumRead))
-            ErrorExit("ReadConsoleInput");
+            SAFE_ERROR_EXIT(hStdin, irInBuf, cNumRead);
 
         if (isNewCommand) {
             GetCurrentDir();

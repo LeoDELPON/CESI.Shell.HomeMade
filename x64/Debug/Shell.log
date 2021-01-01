@@ -1,6 +1,69 @@
-﻿  stringParser.c
+﻿  commandShell.c
+C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(23,28): warning C4028: paramètre formel 1 différent de la déclaration
+C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(29,69): warning C4020: 'ErrorExit' : paramètres réels trop nombreux
+C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(50,20): warning C4133: 'fonction' : types incompatibles - de 'wchar_t [2048]' à 'char *const '
+C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(52,38): warning C4133: 'fonction' : types incompatibles - de 'wchar_t [2048]' à 'LPCSTR'
+C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(63,28): warning C4133: 'fonction' : types incompatibles - de 'wchar_t [2048]' à 'char *const '
+C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(66,26): warning C4477: 'printf_s' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 1 est de type 'wchar_t *'
+C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(66,26): message : utilisez '%ls' dans la chaîne de format
+C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(66,26): message : utilisez '%lls' dans la chaîne de format
+C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(66,26): message : utilisez '%Ls' dans la chaîne de format
+C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(66,26): message : utilisez '%ws' dans la chaîne de format
+C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(69,26): warning C4477: 'printf_s' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 1 est de type 'wchar_t *'
+C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(69,26): message : utilisez '%ls' dans la chaîne de format
+C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(69,26): message : utilisez '%lls' dans la chaîne de format
+C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(69,26): message : utilisez '%Ls' dans la chaîne de format
+C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(69,26): message : utilisez '%ws' dans la chaîne de format
+  cursorMotion.c
+  main.c
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(29,9): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'HANDLE'
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(29,9): warning C4477: 'fprintf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 4 est de type 'HANDLE'
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(29,9): warning C4313: 'fprintf' : conflit entre '%d' dans la chaîne de format et l'argument 4 de type 'HANDLE'
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(29,9): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 6 est de type 'long'
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(29,9): warning C4313: 'fprintf' : conflit entre '%s' dans la chaîne de format et l'argument 6 de type 'long'
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(29,9): warning C4474: 'fprintf' : trop d'arguments passés pour la chaîne de format
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(29,9): message : les espaces réservés et leurs paramètres attendent des arguments 7 variadiques, mais des arguments 8 ont été fournis
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(42,13): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'HANDLE'
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(42,13): warning C4477: 'fprintf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 4 est de type 'INPUT_RECORD *'
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(42,13): warning C4313: 'fprintf' : conflit entre '%d' dans la chaîne de format et l'argument 4 de type 'INPUT_RECORD *'
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(42,13): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 6 est de type 'int'
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(42,13): warning C4313: 'fprintf' : conflit entre '%s' dans la chaîne de format et l'argument 6 de type 'int'
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(42,13): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 7 est de type 'long'
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(42,13): warning C4313: 'fprintf' : conflit entre '%s' dans la chaîne de format et l'argument 7 de type 'long'
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(42,13): warning C4474: 'fprintf' : trop d'arguments passés pour la chaîne de format
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(42,13): message : les espaces réservés et leurs paramètres attendent des arguments 7 variadiques, mais des arguments 9 ont été fournis
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(53,56): warning C4020: 'EnterWriteToConsole' : paramètres réels trop nombreux
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(57,37): warning C4047: 'fonction' : les niveaux d'indirection de 'INPUT_RECORD *' et de 'INPUT_RECORD (*)[128]' sont différents
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(57,29): warning C4024: 'MoveConsole' : types différents pour le paramètre formel et réel 1
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(11,21): warning C4101: 'fdwMode' : variable locale non référencée
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(17,33): warning C4101: 'isLeftArrow' : variable locale non référencée
+C:\Users\delpo\Documents\Projets\C#\Shell\main.c(14,10): warning C4101: 'chBuffer' : variable locale non référencée
+  processManager.c
+C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.h(1,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(7,20): warning C4101: 'listProcess' : variable locale non référencée
+C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(59,43): warning C4047: '=' : les niveaux d'indirection de 'void *(__cdecl *)(void)' et de 'void (__cdecl *)(void)' sont différents
+C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(66,39): warning C4047: '=' : les niveaux d'indirection de 'void *(__cdecl *)(void)' et de 'void (__cdecl *)(void)' sont différents
+C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(73,50): warning C4047: '=' : les niveaux d'indirection de 'void *(__cdecl *)(void)' et de 'void (__cdecl *)(void)' sont différents
+  stringManager.c
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(12,54): warning C4133: '=' : types incompatibles - de 'long *' à 'char *'
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(28,36): warning C4244: '=' : conversion de 'long' en 'char', perte possible de données
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(35,9): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'Array_t *'
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(35,9): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 7 est de type 'errno_t'
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(35,9): warning C4313: 'fprintf' : conflit entre '%s' dans la chaîne de format et l'argument 7 de type 'errno_t'
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(40,29): warning C4047: '=' : les niveaux d'indirection de 'char' et de 'char [2]' sont différents
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(50,36): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(56,28): warning C4018: '<' : incompatibilité signed/unsigned
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(46,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(47,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(77,9): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 7 est de type 'errno_t'
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(77,9): warning C4313: 'fprintf' : conflit entre '%s' dans la chaîne de format et l'argument 7 de type 'errno_t'
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(85,9): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 7 est de type 'errno_t'
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(85,9): warning C4313: 'fprintf' : conflit entre '%s' dans la chaîne de format et l'argument 7 de type 'errno_t'
+C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(91,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+  stringParser.c
 C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(31,17): warning C4047: 'return' : les niveaux d'indirection de 'LIST_PARSED_T *' et de 'int' sont différents
 C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(5,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
 C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(40,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'unsigned int', perte possible de données
+  Génération de code en cours...
 C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(34): warning C4715: 'AddToList' : les chemins de contrôle ne retournent pas tous une valeur
   Shell.vcxproj -> C:\Users\delpo\Documents\Projets\C#\Shell\x64\Debug\Shell.exe
