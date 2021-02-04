@@ -4,14 +4,14 @@
 #include "stringParser.h"
 
 void ApplyCommand(Array_t* stringToBeParsed) {
-	CallProcessList_t listProcess;
-	//InitCommands(&listProcess);
-	LIST_PARSED_T* listChParsed = NULL;
-	char* newRet;
+	//CallProcessList_t listProcess;
+	////InitCommands(&listProcess);
+	//LIST_PARSED_T* listChParsed = NULL;
+	//char* newRet;
 
-	newRet = (char*)malloc(sizeof(char) * (stringToBeParsed->used + 1));
-	strncpy_s(newRet, stringToBeParsed->used + 1, stringToBeParsed->array, stringToBeParsed->used);
-	newRet = OperatorParser(newRet, listChParsed);
+	//newRet = (char*)malloc(sizeof(char) * (stringToBeParsed->used + 1));
+	//strncpy_s(newRet, stringToBeParsed->used + 1, stringToBeParsed->array, stringToBeParsed->used);
+	//newRet = OperatorParser(newRet, listChParsed);
 }
 
 

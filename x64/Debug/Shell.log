@@ -1,21 +1,11 @@
-﻿  stringManager.c
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.h(1,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(12,54): warning C4133: '=' : types incompatibles - de 'long *' à 'char *'
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(19,9): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'Array_t *'
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(28,36): warning C4244: '=' : conversion de 'long' en 'char', perte possible de données
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(19,9): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(35,9): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'Array_t *'
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(35,9): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(50,36): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(56,28): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(46,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(47,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(83,9): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(87,45): warning C4028: paramètre formel 2 différent de la déclaration
-  stringParser.c
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(39,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'unsigned int', perte possible de données
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(60,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'unsigned int', perte possible de données
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(62,11): warning C4101: 'ret' : variable locale non référencée
-  Génération de code en cours...
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(54): warning C4716: 'AddToList' : doit retourner une valeur
+﻿  stringParser.c
+C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(21,36): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'LIST_PARSED_T *'
+C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(22,34): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'LIST_PARSED_T *'
+C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(5,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'unsigned int', perte possible de données
+C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(21,36): warning C4101: 'buff' : variable locale non référencée
+C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(22,34): warning C4101: 'buff' : variable locale non référencée
+C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(69,16): warning C4133: 'return' : types incompatibles - de 'LIST_PARSED_T *' à 'char *'
+C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(44,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'unsigned int', perte possible de données
+C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(57,24): warning C4101: 'buff' : variable locale non référencée
+C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(65,20): warning C4101: 'buff' : variable locale non référencée
   Shell.vcxproj -> C:\Users\delpo\Documents\Projets\C#\Shell\x64\Debug\Shell.exe

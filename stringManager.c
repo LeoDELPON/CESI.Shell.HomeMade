@@ -39,7 +39,6 @@ VOID CustomArrayAddEOF(Array_t* a) {
     }
     a->array[a->used] = '\0';
 }
-
 VOID CustomArrayDeleteElement(Array_t* a, size_t elementToDel) {
     Array_t newArray;
     newArray.array = NULL;
@@ -78,7 +77,7 @@ VOID CustomArrayFreeElement(Array_t* a) {
 }
 
 
- VOID SafeFree(char* pointerToFree) {
+VOID SafeFree(char* pointerToFree) {
     if (pointerToFree == NULL)
         SAFE_ERROR_EXIT(pointerToFree);
     SAFE_FREE(pointerToFree);
@@ -87,23 +86,35 @@ VOID CustomArrayFreeElement(Array_t* a) {
 char* LdnStrncpy_s(char* dest, unsigned int destLength, char* source, int sourceStart, int wordIndex) {
     int indexIndicatorAbortStrncpy = wordIndex - sourceStart;
     size_t indexArrayStartDest = 0;
-    size_t indexArrayStartSrc = sourceStart + 1;
-
+    size_t indexArrayStartSrc = 0;
+    if (sourceStart != 0) {
+        indexArrayStartSrc = sourceStart + 1;
+    } else {
+        indexArrayStartSrc = sourceStart;
+    }
     while (indexIndicatorAbortStrncpy != 0) {
-        dest[indexArrayStartDest] = source[indexArrayStartSrc];
+        dest[indexArrayStartDest] = source[indexArrayStartSrc]; 
         indexIndicatorAbortStrncpy--;
         indexArrayStartDest++;
         indexArrayStartSrc++;
+    }               
+    if (sourceStart != 0) {
+        dest[destLength - 1] = '\0';
     }
-    dest[destLength] = '\0';
+    else {
+        dest[destLength] = '\0';
+    }
     return dest;
 }
 
 
-void EnterWriteToConsole(Array_t* pArray) {
+void EnterWriteToConsole(Array_t* pArray) {                
     LIST_PARSED_T* parsedList = NULL;
+    parsedList = (LIST_PARSED_T*)malloc(sizeof(LIST_PARSED_T));
+    if (parsedList == NULL) SAFE_ERROR_EXIT(parsedList);
+    parsedList->structureElement = NULL;
     CustomArrayAddEOF(pArray);
-    OperatorParser(pArray->array, parsedList);
+    LdnStrTok(pArray->array, parsedList);
     //ApplyCommand(pArray);
     CustomArrayFreeElement(pArray);
     CustomArrayInit(pArray, 5);
