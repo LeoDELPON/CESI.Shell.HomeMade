@@ -14,8 +14,8 @@ void GetCurrentDir(void) {
 }
 
 VOID ChangeDir(const char* path) {
-     if (!path)
-         ErrorExit("[-] ChangeDir \n");
+    if (!path)
+        SAFE_ERROR_EXIT(path);
      if (_chdir(path)) {
          SAFE_ERROR_EXIT(path);
      }

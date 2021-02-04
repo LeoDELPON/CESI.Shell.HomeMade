@@ -3,7 +3,6 @@
 #include "processManager.h"
 #include "cursorMotion.h"
 
-VOID ErrorExit(LPSTR lpszMessage);
 VOID GetCurrentDir(VOID);
 VOID InitWelcomeMessage(VOID);
 
@@ -15,8 +14,7 @@ int main(void) {
     int counter = 0;
     Array_t arrayElement;
     LD_BOOL_T isRunning = TRUE, isLeftArrow;
-    LimitPosBaseInput_t limitStart, limitEnd;
-
+    LimitPosBaseInput_t limitStart, limitEnd;   
 
     arrayElement.array = NULL;
     CustomArrayInit(&arrayElement, 5);

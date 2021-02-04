@@ -11,14 +11,7 @@ void ApplyCommand(Array_t* stringToBeParsed) {
 
 	newRet = (char*)malloc(sizeof(char) * (stringToBeParsed->used + 1));
 	strncpy_s(newRet, stringToBeParsed->used + 1, stringToBeParsed->array, stringToBeParsed->used);
-	do {
-		newRet = OperatorParser(newRet, listChParsed);
-	} while (1);
-
-	//for (unsigned i = 0; i < listProcess.dictSize ; ++i) {
-	//	if (strcmp(listProcess.keyDict, stringToBeParsed->array))
-	//		listProcess.func;
-	//}
+	newRet = OperatorParser(newRet, listChParsed);
 }
 
 
@@ -43,7 +36,7 @@ VOID InitCommandList(CallProcessList_t* list, int l) {
 
 VOID AddCommandToList(CallProcessList_t* list, CallProcess_t element) {
 	if (!list)
-		ErrorExit("The process couldn't be had to the processList");
+		SAFE_ERROR_EXIT(list);
 	if (list->used == list->size) {
 		list->size <<= 1;
 		list->process = realloc(list->process, list->size * sizeof(CallProcess_t));

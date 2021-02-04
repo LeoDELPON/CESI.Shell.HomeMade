@@ -27,11 +27,3 @@ void GetCursorPosition(LimitPosBaseInput_t* lim) {
 	lim->x = psbi.dwCursorPosition.X;
 	lim->y = psbi.dwCursorPosition.Y;
 }
-
-void EnterWriteToConsole(Array_t* pArray) {
-	CustomArrayAddEOF(pArray);
-	ApplyCommand(pArray);
-	CustomArrayFreeElement(pArray);
-	CustomArrayInit(pArray, 5);
-	printf("\n");
-}
