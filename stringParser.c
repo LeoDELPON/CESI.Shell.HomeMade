@@ -20,14 +20,19 @@ LIST_PARSED_T* AddToList(LIST_PARSED_T* listString, char* string) {
         currentList = (LIST_PARSED_T*)malloc(sizeof(LIST_PARSED_T));
         if (newParsedList == NULL) SAFE_ERROR_EXIT(newParsedList);
         if (currentList == NULL) SAFE_ERROR_EXIT(currentList);
+
         currentList = listString;
+
         newParsedList->structureElement = NULL;
-        newParsedList->nextElement = NULL;
         newParsedList->structureElement = (char*)malloc(sizeof(char) * stringLength + 1);
+        if (newParsedList->structureElement == NULL) SAFE_ERROR_EXIT(newParsedList->structureElement);
+        newParsedList->nextElement = NULL;
+
         for (unsigned i = 0; i < stringLength; ++i) {
             newParsedList->structureElement[i] = string[i];
         }
         newParsedList->structureElement[stringLength] = '\0';
+
         printf("%s\n", newParsedList->structureElement);
         while (currentList->nextElement != NULL) {
             currentList = currentList->nextElement;

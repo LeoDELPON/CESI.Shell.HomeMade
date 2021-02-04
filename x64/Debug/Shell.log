@@ -4,8 +4,9 @@ C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(22,34): warning C4477: 
 C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(5,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'unsigned int', perte possible de données
 C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(21,36): warning C4101: 'buff' : variable locale non référencée
 C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(22,34): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(69,16): warning C4133: 'return' : types incompatibles - de 'LIST_PARSED_T *' à 'char *'
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(44,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'unsigned int', perte possible de données
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(57,24): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(65,20): warning C4101: 'buff' : variable locale non référencée
+C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(28,54): warning C4101: 'buff' : variable locale non référencée
+C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(74,16): warning C4133: 'return' : types incompatibles - de 'LIST_PARSED_T *' à 'char *'
+C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(49,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'unsigned int', perte possible de données
+C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(62,24): warning C4101: 'buff' : variable locale non référencée
+C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(70,20): warning C4101: 'buff' : variable locale non référencée
   Shell.vcxproj -> C:\Users\delpo\Documents\Projets\C#\Shell\x64\Debug\Shell.exe
