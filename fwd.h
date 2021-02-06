@@ -14,6 +14,22 @@
 #define KEY_LEFT_ARROW 0x25
 #define KEY_RIGHT_ARROW 0x27
 
+#define CUSTOM_CALL_CD "cd"
+#define CUSTOM_CALL_LS "ls"
+#define CUSTOM_CALL_PWD "pwd"
+#define CUSTOM_CALL_MKDIR "mkdir"
+#define CUSTOM_CALL_EXIT "exit"
+#define CUSTOM_CALL_TOUCH "touch"
+#define CUSTOM_CALL_CP "cp"
+#define CUSTOM_CALL_MV "mv"
+#define CUSTOM_CALL_ "rm"
+#define CUSTOM_CALL_SUDO "sudo"
+#define CUSTOM_CALL_CAT "cat"
+#define CUSTOM_CALL_PING "ping"
+#define CUSTOM_CALL_HEAD "head"
+#define CUSTOM_CALL_TAIL "tail"
+#define CUSTOM_CALL_NUMBER 3
+
 #define LEN 1024
 #define SAFE_ERROR_EXIT_STRING_1_ARG(arg) {char buff[LEN];fprintf(stderr, "\n[-] ERROR on %s function\n[-] %s=%s \n[-] ErrorNo: %d at line : %d in the file %s\n",__func__ , #arg, arg ,errno, __LINE__, __FILE__); perror("[-] Message"); exit(EXIT_FAILURE);}
 #define SAFE_ERROR_EXIT_STRING_2_ARGS(arg1, arg2) {char buff[LEN]; fprintf(stderr, "\n[-] ERROR on %s function\n[-] %s=%s | %s=%s \n[-] ErrorNo: %d at line : %d in the file %s\n",__func__ , #arg1, arg1, #arg2, arg2, errno, __LINE__, __FILE__); perror("[-] Message"); exit(EXIT_FAILURE);}
@@ -34,18 +50,18 @@ typedef  struct _Array_t {
     size_t size;
 } Array_t;
 
-typedef struct _CallProcess_t {
-	char* keyDict;
-	void* (*func)(void);
-	size_t IDAssociated;
-	int dictSize;
-} CallProcess_t;
+typedef void* (*CustomFunctionPtr)(size_t argc, char* argv[]);
 
-typedef struct _CallProcessList_t {
-	CallProcess_t* process;
-	size_t used;
-	size_t size;
-} CallProcessList_t;
+typedef struct _CustomCommand_t {
+	char* commandMatch;
+	void* result;
+	CustomFunctionPtr opt;
+} CustomCommand_t;
+
+typedef struct _CustomCommandLinkedList_t {
+	CustomCommand_t* function;
+	struct _CustomCommandLinkedList_t* nextElement;
+} CustomCommandLinkedList_t;
 
 typedef struct _List_Parsed_t {
 	char* structureElement;

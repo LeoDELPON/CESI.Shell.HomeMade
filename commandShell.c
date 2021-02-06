@@ -8,7 +8,7 @@ void GetCurrentDir(void) {
         SAFE_ERROR_EXIT(currentDir);
     }
     else {
-        printf("%s ", currentDir);
+        printf("%s", currentDir);
         free(currentDir);
     }
 }
@@ -25,12 +25,10 @@ VOID ChangeDir(const char* path) {
 }
 
 //Not finished bc it does not find dir
-int ListDirectoryContent(const char* sDir) {
+void ListDirectoryContent(const char* sDir) {
     WIN32_FIND_DATAA fdFile;
     HANDLE hFind = NULL;
-
     wchar_t sPath[2048];
-
     sprintf_s(sPath, 2048, "%s\\*.*", sDir);
 
     if ((hFind = FindFirstFileA(sPath, &fdFile)) == INVALID_HANDLE_VALUE)
@@ -54,7 +52,6 @@ int ListDirectoryContent(const char* sDir) {
         }
     } while (FindNextFileA(hFind, &fdFile));
     FindClose(hFind);
-    return 1;
 }
 
 VOID ExitProgramm() {
@@ -68,4 +65,29 @@ VOID CreateDir() {
 
 VOID CreateF() {
 
+}
+
+VOID OpenHelpCommand() {
+    puts("\n**********************************************************"
+        "\n            Copyright Leo .D @ Skyso"
+        "\nUse this for fun and feel free to let a star on github :)"
+        "\n            List commands supported:"
+        "\n            - cd"
+        "\n            - ls"
+        "\n            - pwd"
+        "\n            - mkdir"
+        "\n            - exit"
+        "\n            - touch"
+        "\n            - cp"
+        "\n            - mv"
+        "\n            - rm"
+        "\n            - sudo"
+        "\n            - cat"
+        "\n            - ping"
+        "\n            - head"
+        "\n            - tail"
+        "\n"
+        "\nAgain, thank you to KJ for having helped me doing this shell"
+        "\n************************************************************"
+    );
 }

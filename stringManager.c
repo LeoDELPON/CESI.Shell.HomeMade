@@ -2,7 +2,7 @@
 #include "stringManager.h"
 #include "commandShell.h"
 #include "stringParser.h"
-
+#include "processManager.h"
 
 VOID InitWelcomeMessage(VOID) {
     printf("Leo DELPON Company [version 0.00]\n(nc) 2020 Personnal Project. Feel Free, It is open-source :)\n\n");
@@ -115,7 +115,7 @@ void EnterWriteToConsole(Array_t* pArray) {
     parsedList->structureElement = NULL;
     CustomArrayAddEOF(pArray);
     LdnStrTok(pArray->array, parsedList);
-    //ApplyCommand(pArray);
+    ExecuteCommand(parsedList);
     CustomArrayFreeElement(pArray);
     CustomArrayInit(pArray, 5);
     printf("\n");
