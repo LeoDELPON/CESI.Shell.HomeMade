@@ -8,11 +8,16 @@
 
 #define TRUE 1
 #define FALSE 0
+
 #define KEY_ENTER 0x0D
 #define KEY_DEL 0x08
 #define KEY_TAB 0x09
+#define KEY_CTRL 0x11
+
 #define KEY_LEFT_ARROW 0x25
 #define KEY_RIGHT_ARROW 0x27
+#define KEY_UP_ARROW 0x26
+#define KEY_DOWN_ARROW 0x28
 
 #define CUSTOM_CALL_CD "cd"
 #define CUSTOM_CALL_LS "ls"

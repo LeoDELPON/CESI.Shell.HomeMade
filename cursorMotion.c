@@ -27,3 +27,8 @@ void GetCursorPosition(LimitPosBaseInput_t* lim) {
 	lim->x = psbi.dwCursorPosition.X;
 	lim->y = psbi.dwCursorPosition.Y;
 }
+
+
+void GetHistoricCommand(INPUT_RECORD* pIrInBuf) {
+
+}

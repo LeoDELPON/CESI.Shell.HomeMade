@@ -21,7 +21,9 @@ CustomCommandLinkedList_t* InitializeProcessList(CustomCommandLinkedList_t* list
 		&GetCurrentDir, 
 		&ChangeDir, 
 		&ListDirectoryContent 
-	};
+	}; 
+
+
 }
 
 CustomCommand_t* InitializeCustomCommand(CustomCommand_t* custCommand) {

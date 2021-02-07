@@ -112,7 +112,6 @@ char* LdnStrncpy_s(char* dest, unsigned int destLength, char* source, int source
 
 void EnterWriteToConsole(Array_t* pArray) {                
     LIST_PARSED_T*  parsedList = (LIST_PARSED_T*)LdnMalloc(sizeof(LIST_PARSED_T));
-    if (parsedList == NULL) SAFE_ERROR_EXIT(parsedList);
     parsedList->structureElement = NULL;
     CustomArrayAddEOF(pArray);
     LdnStrTok(pArray->array, parsedList);

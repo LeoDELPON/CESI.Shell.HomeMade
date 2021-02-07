@@ -15,18 +15,13 @@ LIST_PARSED_T* AddToList(LIST_PARSED_T* listString, char* string) {
         return listString;
     }
     else {
-        LIST_PARSED_T* newParsedList = NULL;
-        LIST_PARSED_T* currentList = NULL;
-        newParsedList = (LIST_PARSED_T*)LdnMalloc(sizeof(LIST_PARSED_T));
-        currentList = (LIST_PARSED_T*)LdnMalloc(sizeof(LIST_PARSED_T));
-        if (newParsedList == NULL) SAFE_ERROR_EXIT(newParsedList);
-        if (currentList == NULL) SAFE_ERROR_EXIT(currentList);
+        LIST_PARSED_T* newParsedList = (LIST_PARSED_T*)LdnMalloc(sizeof(LIST_PARSED_T));
+        LIST_PARSED_T* currentList = (LIST_PARSED_T*)LdnMalloc(sizeof(LIST_PARSED_T));
 
         currentList = listString;
 
         newParsedList->structureElement = NULL;
         newParsedList->structureElement = (char*)LdnMalloc(sizeof(char) * stringLength + 1);
-        if (newParsedList->structureElement == NULL) SAFE_ERROR_EXIT(newParsedList->structureElement);
         newParsedList->nextElement = NULL;
 
         for (unsigned i = 0; i < stringLength; ++i) {
@@ -60,7 +55,6 @@ char* LdnStrTok(char* str, LIST_PARSED_T* list) {
         if (TOKEN_STRING_SEPARATOR != str[i] || (TOKEN_STRING_SEPARATOR != str[i] && !isalpha(str[i-1]))) continue;
         unsigned int sizeMalloc = i - start;
         chParsed = (char*)LdnMalloc(sizeof(char) * sizeMalloc + 1);
-        if (!chParsed) SAFE_ERROR_EXIT(chParsed);
         LdnStrncpy_s(chParsed, sizeMalloc, str, start, i);
         AddToList(list, chParsed);
         SafeFree(chParsed);
@@ -68,7 +62,6 @@ char* LdnStrTok(char* str, LIST_PARSED_T* list) {
     }
     unsigned int sizeMalloc = strLength - start;
     chParsed = (char*)LdnMalloc(sizeof(char) * sizeMalloc + 1);
-    if (!chParsed) SAFE_ERROR_EXIT(chParsed);
     LdnStrncpy_s(chParsed, sizeMalloc, str, start, (strLength));
     AddToList(list, chParsed);
     SafeFree(chParsed);

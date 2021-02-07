@@ -40,7 +40,6 @@ void ListDirectoryContent(const char* sDir) {
         if (strcmp((char*)fdFile.cFileName, ".") != 0
             && strcmp((char*)fdFile.cFileName, "..") != 0)
         {
-
             sprintf_s(sPath, 2048, "%s\\%s", sDir, (char*)fdFile.cFileName);
             if (fdFile.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
             {

@@ -22,3 +22,21 @@ void* LdnMemset(void* ptr, int value, size_t count) {
 	ptr = tmp;
 	return ptr;
 }
+
+void* LdnMemcpy_s(void* dest, size_t destSize, const void* src, size_t count) {
+	if (destSize < count) SAFE_ERROR_EXIT(dest, src);
+	char* ptrSrc;
+	char* ptrDest;
+	size_t i = 0;
+
+	ptrSrc = (char*)src;
+	ptrDest = (char*)dest;
+
+	while (i < count) {
+		ptrDest[i] = ptrSrc[i];
+		++i;
+	}
+
+	dest = ptrDest;
+	return dest;
+}
