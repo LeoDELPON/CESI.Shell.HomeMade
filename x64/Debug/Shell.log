@@ -1,80 +1,15 @@
-﻿  commandShell.c
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(8,9): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(16,28): warning C4028: paramètre formel 1 différent de la déclaration
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(18,9): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(20,10): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(32,20): warning C4133: 'fonction' : types incompatibles - de 'wchar_t [2048]' à 'char *const '
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(34,38): warning C4133: 'fonction' : types incompatibles - de 'wchar_t [2048]' à 'LPCSTR'
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(36,9): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'HANDLE'
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(44,28): warning C4133: 'fonction' : types incompatibles - de 'wchar_t [2048]' à 'char *const '
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(47,26): warning C4477: 'printf_s' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 1 est de type 'wchar_t *'
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(47,26): message : utilisez '%ls' dans la chaîne de format
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(47,26): message : utilisez '%lls' dans la chaîne de format
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(47,26): message : utilisez '%Ls' dans la chaîne de format
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(47,26): message : utilisez '%ws' dans la chaîne de format
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(50,26): warning C4477: 'printf_s' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 1 est de type 'wchar_t *'
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(50,26): message : utilisez '%ls' dans la chaîne de format
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(50,26): message : utilisez '%lls' dans la chaîne de format
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(50,26): message : utilisez '%Ls' dans la chaîne de format
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(50,26): message : utilisez '%ws' dans la chaîne de format
-C:\Users\delpo\Documents\Projets\C#\Shell\commandShell.c(36,9): warning C4101: 'buff' : variable locale non référencée
-  cursorMotion.c
-  main.c
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(27,9): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'HANDLE'
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(27,9): warning C4477: 'fprintf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 4 est de type 'HANDLE'
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(27,9): warning C4313: 'fprintf' : conflit entre '%d' dans la chaîne de format et l'argument 4 de type 'HANDLE'
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(27,9): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 6 est de type 'long'
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(27,9): warning C4313: 'fprintf' : conflit entre '%s' dans la chaîne de format et l'argument 6 de type 'long'
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(27,9): warning C4474: 'fprintf' : trop d'arguments passés pour la chaîne de format
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(27,9): message : les espaces réservés et leurs paramètres attendent des arguments 6 variadiques, mais des arguments 7 ont été fournis
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(40,13): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'HANDLE'
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(40,13): warning C4477: 'fprintf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 4 est de type 'INPUT_RECORD *'
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(40,13): warning C4313: 'fprintf' : conflit entre '%d' dans la chaîne de format et l'argument 4 de type 'INPUT_RECORD *'
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(40,13): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 6 est de type 'int'
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(40,13): warning C4313: 'fprintf' : conflit entre '%s' dans la chaîne de format et l'argument 6 de type 'int'
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(40,13): warning C4474: 'fprintf' : trop d'arguments passés pour la chaîne de format
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(40,13): message : les espaces réservés et leurs paramètres attendent des arguments 6 variadiques, mais des arguments 8 ont été fournis
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(51,56): warning C4020: 'EnterWriteToConsole' : paramètres réels trop nombreux
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(55,37): warning C4047: 'fonction' : les niveaux d'indirection de 'INPUT_RECORD *' et de 'INPUT_RECORD (*)[128]' sont différents
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(55,29): warning C4024: 'MoveConsole' : types différents pour le paramètre formel et réel 1
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(10,21): warning C4101: 'fdwMode' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(16,33): warning C4101: 'isLeftArrow' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(13,10): warning C4101: 'chBuffer' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(27,9): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\main.c(40,13): warning C4101: 'buff' : variable locale non référencée
-  processManager.c
+﻿  processManager.c
 C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.h(1,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
-C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(13,20): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'CustomCommandLinkedList_t *'
-C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(14,20): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'CustomCommandLinkedList_t *'
-C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(16,36): warning C4047: 'fonction' : les niveaux d'indirection de 'CustomCommandLinkedList_t *' et de 'CustomCommandLinkedList_t **' sont différents
-C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(16,24): warning C4024: 'InitializeProcessList' : types différents pour le paramètre formel et réel 1
-C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(13,20): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(14,20): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(25,54): error C2059: erreur de syntaxe : '['
-  stringManager.c
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.h(1,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(12,54): warning C4133: '=' : types incompatibles - de 'long *' à 'char *'
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(19,9): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'Array_t *'
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(28,36): warning C4244: '=' : conversion de 'long' en 'char', perte possible de données
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(19,9): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(35,9): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'Array_t *'
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(35,9): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(49,36): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(55,28): warning C4018: '<' : incompatibilité signed/unsigned
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(45,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(46,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(82,9): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(114,29): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'LIST_PARSED_T *'
-C:\Users\delpo\Documents\Projets\C#\Shell\stringManager.c(114,29): warning C4101: 'buff' : variable locale non référencée
-  stringParser.c
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(21,36): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'LIST_PARSED_T *'
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(22,34): warning C4477: 'fprintf' : la chaîne de format '%s' nécessite un argument de type 'char *', mais l'argument variadique 3 est de type 'LIST_PARSED_T *'
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(5,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'unsigned int', perte possible de données
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(21,36): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(22,34): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(28,54): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(74,16): warning C4133: 'return' : types incompatibles - de 'LIST_PARSED_T *' à 'char *'
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(49,1): warning C4267: 'initialisation' : conversion de 'size_t' en 'unsigned int', perte possible de données
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(62,24): warning C4101: 'buff' : variable locale non référencée
-C:\Users\delpo\Documents\Projets\C#\Shell\stringParser.c(70,20): warning C4101: 'buff' : variable locale non référencée
-  Génération de code en cours...
+C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(8,82): warning C4022: 'LdnMalloc' : incompatibilité de pointeur pour le paramètre réel 1
+C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(9,81): warning C4022: 'LdnMalloc' : incompatibilité de pointeur pour le paramètre réel 1
+C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(11,36): warning C4047: 'fonction' : les niveaux d'indirection de 'CustomCommandLinkedList_t *' et de 'CustomCommandLinkedList_t **' sont différents
+C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(11,24): warning C4024: 'InitializeProcessList' : types différents pour le paramètre formel et réel 1
+C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(20,1): warning C4113: 'void (__cdecl *)(void)' est différent de 'CustomFunctionPtr' dans les listes de paramètres
+C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(20,1): warning C4047: 'initialisation' : les niveaux d'indirection de 'CustomFunctionPtr' et de 'void (__cdecl *)(void)' sont différents
+C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(20,1): warning C4113: 'void (__cdecl *)(char *)' est différent de 'CustomFunctionPtr' dans les listes de paramètres
+C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(20,1): warning C4047: 'initialisation' : les niveaux d'indirection de 'CustomFunctionPtr' et de 'void (__cdecl *)(char *)' sont différents
+C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(20,1): warning C4113: 'void (__cdecl *)(const char *)' est différent de 'CustomFunctionPtr' dans les listes de paramètres
+C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(20,1): warning C4047: 'initialisation' : les niveaux d'indirection de 'CustomFunctionPtr' et de 'void (__cdecl *)(const char *)' sont différents
+C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(25): warning C4716: 'InitializeProcessList' : doit retourner une valeur
+C:\Users\delpo\Documents\Projets\C#\Shell\processManager.c(29): warning C4716: 'InitializeCustomCommand' : doit retourner une valeur
+  Shell.vcxproj -> C:\Users\delpo\Documents\Projets\C#\Shell\x64\Debug\Shell.exe

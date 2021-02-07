@@ -1,10 +1,11 @@
 #include "fwd.h"
 #include "stringManager.h"
+#include "allocatorManager.h"
 
 LIST_PARSED_T* AddToList(LIST_PARSED_T* listString, char* string) {
     unsigned int stringLength = strlen(string);
     if (listString->structureElement == NULL) {
-        listString->structureElement = (char*)malloc(sizeof(char) * stringLength + 1);
+        listString->structureElement = (char*)LdnMalloc(sizeof(char) * stringLength + 1);
         for (unsigned i = 0; i < stringLength; ++i) {
             listString->structureElement[i] = string[i];
         }
@@ -16,15 +17,15 @@ LIST_PARSED_T* AddToList(LIST_PARSED_T* listString, char* string) {
     else {
         LIST_PARSED_T* newParsedList = NULL;
         LIST_PARSED_T* currentList = NULL;
-        newParsedList = (LIST_PARSED_T*)malloc(sizeof(LIST_PARSED_T));
-        currentList = (LIST_PARSED_T*)malloc(sizeof(LIST_PARSED_T));
+        newParsedList = (LIST_PARSED_T*)LdnMalloc(sizeof(LIST_PARSED_T));
+        currentList = (LIST_PARSED_T*)LdnMalloc(sizeof(LIST_PARSED_T));
         if (newParsedList == NULL) SAFE_ERROR_EXIT(newParsedList);
         if (currentList == NULL) SAFE_ERROR_EXIT(currentList);
 
         currentList = listString;
 
         newParsedList->structureElement = NULL;
-        newParsedList->structureElement = (char*)malloc(sizeof(char) * stringLength + 1);
+        newParsedList->structureElement = (char*)LdnMalloc(sizeof(char) * stringLength + 1);
         if (newParsedList->structureElement == NULL) SAFE_ERROR_EXIT(newParsedList->structureElement);
         newParsedList->nextElement = NULL;
 
@@ -58,7 +59,7 @@ char* LdnStrTok(char* str, LIST_PARSED_T* list) {
         }
         if (TOKEN_STRING_SEPARATOR != str[i] || (TOKEN_STRING_SEPARATOR != str[i] && !isalpha(str[i-1]))) continue;
         unsigned int sizeMalloc = i - start;
-        chParsed = (char*)malloc(sizeof(char) * sizeMalloc + 1);
+        chParsed = (char*)LdnMalloc(sizeof(char) * sizeMalloc + 1);
         if (!chParsed) SAFE_ERROR_EXIT(chParsed);
         LdnStrncpy_s(chParsed, sizeMalloc, str, start, i);
         AddToList(list, chParsed);
@@ -66,7 +67,7 @@ char* LdnStrTok(char* str, LIST_PARSED_T* list) {
         start = i;
     }
     unsigned int sizeMalloc = strLength - start;
-    chParsed = (char*)malloc(sizeof(char) * sizeMalloc + 1);
+    chParsed = (char*)LdnMalloc(sizeof(char) * sizeMalloc + 1);
     if (!chParsed) SAFE_ERROR_EXIT(chParsed);
     LdnStrncpy_s(chParsed, sizeMalloc, str, start, (strLength));
     AddToList(list, chParsed);

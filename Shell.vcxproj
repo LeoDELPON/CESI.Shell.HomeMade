@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="allocatorManager.c" />
     <ClCompile Include="commandShell.c" />
     <ClCompile Include="cursorMotion.c" />
     <ClCompile Include="main.c" />
@@ -27,6 +28,7 @@
     <ClCompile Include="stringParser.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="allocatorManager.h" />
     <ClInclude Include="commandShell.h" />
     <ClInclude Include="cursorMotion.h" />
     <ClInclude Include="fwd.h" />

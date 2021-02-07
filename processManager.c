@@ -2,16 +2,11 @@
 #include "processManager.h"
 #include "commandShell.h"
 #include "stringParser.h"
+#include "allocatorManager.h"
 
 void ExecuteCommand(LIST_PARSED_T* listOfParsedWords) {
-	CustomCommandLinkedList_t* listProcess;
-	CustomCommandLinkedList_t* currentList;
-	listProcess = NULL;
-	currentList = NULL;
-	currentList = (CustomCommandLinkedList_t*)malloc(sizeof(CustomCommandLinkedList_t));
-	listProcess = (CustomCommandLinkedList_t*)malloc(sizeof(CustomCommandLinkedList_t));
-	if (!currentList) SAFE_ERROR_EXIT(currentList);
-	if (!listProcess) SAFE_ERROR_EXIT(listProcess);
+	CustomCommandLinkedList_t*  currentList = (CustomCommandLinkedList_t*)LdnMalloc(sizeof(CustomCommandLinkedList_t));
+	CustomCommandLinkedList_t* listProcess = (CustomCommandLinkedList_t*)LdnMalloc(sizeof(CustomCommandLinkedList_t));
 	listProcess->nextElement = NULL;
 	InitializeProcessList(&listProcess);
 	currentList = listProcess;
@@ -21,7 +16,14 @@ void ExecuteCommand(LIST_PARSED_T* listOfParsedWords) {
 	currentList->function->opt;
 }
 
-CustomCommandLinkedList_t InitializeProcessList(CustomCommandLinkedList_t* list) {
-	CustomFunctionPtr functionTab[CUSTOM_CALL_NUMBER] = { &GetCurrentDir, &ChangeDir, &ListDirectoryContent };
+CustomCommandLinkedList_t* InitializeProcessList(CustomCommandLinkedList_t* list) {
+	CustomFunctionPtr functionTab[CUSTOM_CALL_NUMBER] = { 
+		&GetCurrentDir, 
+		&ChangeDir, 
+		&ListDirectoryContent 
+	};
+}
+
+CustomCommand_t* InitializeCustomCommand(CustomCommand_t* custCommand) {
 
 }

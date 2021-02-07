@@ -3,13 +3,14 @@
 #include "commandShell.h"
 #include "stringParser.h"
 #include "processManager.h"
+#include "allocatorManager.h"
 
 VOID InitWelcomeMessage(VOID) {
     printf("Leo DELPON Company [version 0.00]\n(nc) 2020 Personnal Project. Feel Free, It is open-source :)\n\n");
 }
 
 VOID CustomArrayInit(Array_t* a, size_t sizeInit) {
-    a->array = (long*)malloc(sizeInit * sizeof(long));
+    a->array = (long*)LdnMalloc(sizeInit * sizeof(long));
     a->used = 0;
     a->size = sizeInit;
 }
@@ -39,6 +40,7 @@ VOID CustomArrayAddEOF(Array_t* a) {
     }
     a->array[a->used] = '\0';
 }
+
 VOID CustomArrayDeleteElement(Array_t* a, size_t elementToDel) {
     Array_t newArray;
     newArray.array = NULL;
@@ -109,8 +111,7 @@ char* LdnStrncpy_s(char* dest, unsigned int destLength, char* source, int source
 
 
 void EnterWriteToConsole(Array_t* pArray) {                
-    LIST_PARSED_T* parsedList = NULL;
-    parsedList = (LIST_PARSED_T*)malloc(sizeof(LIST_PARSED_T));
+    LIST_PARSED_T*  parsedList = (LIST_PARSED_T*)LdnMalloc(sizeof(LIST_PARSED_T));
     if (parsedList == NULL) SAFE_ERROR_EXIT(parsedList);
     parsedList->structureElement = NULL;
     CustomArrayAddEOF(pArray);
